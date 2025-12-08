@@ -1,0 +1,25 @@
+{
+  "name": "websocket-chat-backend",
+  "version": "1.0.0",
+  "description": "Backend del chat en tiempo real con WebSocket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No hay tests configurados aún\" && exit 0"
+  },
+  "keywords": [
+    "websocket",
+    "chat",
+    "realtime",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

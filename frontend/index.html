@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat en Tiempo Real - WebSocket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="chat-header">
+            <h1>💬 Chat en Tiempo Real</h1>
+            <div class="connection-status">
+                <span class="status-indicator" id="statusIndicator"></span>
+                <span id="statusText">Desconectado</span>
+            </div>
+        </header>
+
+        <!-- Modal de bienvenida -->
+        <div class="modal" id="welcomeModal">
+            <div class="modal-content">
+                <h2>Bienvenido al Chat</h2>
+                <p>Por favor, ingresa tu nombre de usuario para continuar</p>
+                <form id="usernameForm">
+                    <input
+                        type="text"
+                        id="usernameInput"
+                        placeholder="Tu nombre de usuario"
+                        minlength="2"
+                        maxlength="30"
+                        required
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="btn-primary">Unirse al Chat</button>
+                </form>
+                <p class="form-hint">Mínimo 2 caracteres, máximo 30</p>
+            </div>
+        </div>
+
+        <!-- Main chat area -->
+        <main class="chat-main">
+            <!-- Messages area -->
+            <div class="messages-section">
+                <div class="messages-container" id="messagesContainer">
+                    <div class="welcome-message">
+                        <h3>¡Bienvenido!</h3>
+                        <p>Conéctate y comienza a chatear en tiempo real</p>
+                    </div>
+                </div>
+
+                <!-- Input area -->
+                <div class="input-area">
+                    <form id="messageForm">
+                        <input
+                            type="text"
+                            id="messageInput"
+                            placeholder="Escribe tu mensaje..."
+                            disabled
+                            maxlength="500"
+                            autocomplete="off"
+                        >
+                        <button type="submit" id="sendButton" disabled>
+                            <span>Enviar</span>
+                        </button>
+                    </form>
+                    <div class="input-info">
+                        <span id="charCount">0/500</span>
+                        <span id="rateLimitInfo"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users sidebar -->
+            <aside class="users-sidebar">
+                <div class="users-header">
+                    <h3>Usuarios Activos</h3>
+                    <span class="user-count" id="userCount">0</span>
+                </div>
+                <div class="users-list" id="usersList">
+                    <p class="no-users">No hay usuarios conectados</p>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
