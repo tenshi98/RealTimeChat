@@ -80,7 +80,7 @@ class ChatClient {
 
     // Contador de caracteres
     this.elements.messageInput.addEventListener('input', (e) => {
-      const length = e.target.value.length;
+      const length                        = e.target.value.length;
       this.elements.charCount.textContent = `${length}/500`;
     });
 
@@ -484,8 +484,8 @@ class ChatClient {
   * Formatea un timestamp
   */
   formatTime(timestamp) {
-    const date = new Date(timestamp);
-    const hours = date.getHours().toString().padStart(2, '0');
+    const date    = new Date(timestamp);
+    const hours   = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
     return `${hours}:${minutes}`;
   }
